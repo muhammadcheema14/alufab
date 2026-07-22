@@ -1,0 +1,49 @@
+$svgContent = @'
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="400" height="240">
+  <defs>
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E51D24" />
+      <stop offset="100%" stop-color="#B30F15" />
+    </linearGradient>
+    <linearGradient id="silverGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#CCCCCC" />
+    </linearGradient>
+  </defs>
+
+  <!-- Skyscraper Silhouettes -->
+  <g fill="#FFFFFF" opacity="0.95">
+    <!-- Building 1 (Center Tallest) -->
+    <path d="M 190 20 L 210 20 L 210 120 L 190 120 Z" />
+    <polygon points="190,20 200,5 210,20" />
+    
+    <!-- Building 2 (Left Mid) -->
+    <path d="M 165 45 L 182 45 L 182 120 L 165 120 Z" />
+    <polygon points="165,45 173.5,30 182,45" />
+
+    <!-- Building 3 (Far Left Short) -->
+    <path d="M 145 68 L 158 68 L 158 120 L 145 120 Z" />
+
+    <!-- Building 4 (Right Mid) -->
+    <path d="M 218 40 L 235 40 L 235 120 L 218 120 Z" />
+    <polygon points="218,40 226.5,25 235,40" />
+
+    <!-- Building 5 (Far Right Short) -->
+    <path d="M 242 65 L 255 65 L 255 120 L 242 120 Z" />
+  </g>
+
+  <!-- Red Curved Arc Swoosh -->
+  <path d="M 125 125 C 150 160 250 160 275 110 C 278 122 248 168 125 125 Z" fill="url(#redGrad)" />
+
+  <!-- ALUFAB Text -->
+  <text x="200" y="180" font-family="'Poppins', 'Arial Black', sans-serif" font-weight="900" font-size="44" fill="#E51D24" text-anchor="middle" letter-spacing="2">ALUFAB</text>
+
+  <!-- Frame & ALUMINUM FABRICATOR Text -->
+  <rect x="70" y="195" width="260" height="26" fill="none" stroke="#FFFFFF" stroke-width="2" rx="2" />
+  <text x="200" y="213" font-family="'Manrope', 'Arial', sans-serif" font-weight="800" font-size="14" fill="#FFFFFF" text-anchor="middle" letter-spacing="4">ALUMINUM FABRICATOR</text>
+</svg>
+'@
+
+$svgPath = 'C:\Users\PC\.gemini\antigravity\scratch\alu-fab-pakistan\assets\alufab_logo.svg'
+[System.IO.File]::WriteAllText($svgPath, $svgContent)
+Write-Host "Created SVG Logo at $svgPath"
